@@ -4,6 +4,15 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .vscode/
-backend/*.db
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
 archive/
-docs/demo.mp4
+*.mp4
+.env
+.env.*
+!.env.example

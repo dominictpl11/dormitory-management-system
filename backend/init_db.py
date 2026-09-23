@@ -25,9 +25,9 @@ def init_database():
         
         # Create admin users
         admins_data = [
-            {'admin_id': 'admin1', 'name': 'Admin One', 'phone': '13800000001'},
-            {'admin_id': 'admin2', 'name': 'Admin Two', 'phone': '13800000002'},
-            {'admin_id': 'admin3', 'name': 'Admin Three', 'phone': '13800000003'}
+            {'admin_id': 'admin1', 'name': 'Admin One', 'phone': '00000000001'},
+            {'admin_id': 'admin2', 'name': 'Admin Two', 'phone': '00000000002'},
+            {'admin_id': 'admin3', 'name': 'Admin Three', 'phone': '00000000003'}
         ]
         
         for admin_data in admins_data:
@@ -37,7 +37,7 @@ def init_database():
                 user_id=admin_id,
                 username=admin_id,
                 password_hash=hash_password('123456'),
-                email=f'{admin_id}@cuhk.edu.cn',
+                email=f'{admin_id}@example.invalid',
                 phone=admin_data['phone'],
                 role='admin'
             )
@@ -47,7 +47,7 @@ def init_database():
             admin = Admin(
                 admin_id=admin_id,
                 name=admin_data['name'],
-                email=f'{admin_id}@cuhk.edu.cn',
+                email=f'{admin_id}@example.invalid',
                 phone=admin_data['phone'],
                 password_hash=admin_user.password_hash  # Copy password from user
             )
@@ -161,107 +161,7 @@ def init_database():
             'Psychology', 'Sociology', 'Political Science', 'International Relations', 'History', 'Literature'
         ]
         
-        # 生成200个男生名字（用于AB栋）
-        male_names = [
-            'James Smith', 'Robert Williams', 'Michael Jones', 'William Miller', 'David Moore',
-            'Richard Anderson', 'Joseph Jackson', 'Thomas Harris', 'Christopher Thompson', 'Charles Martinez',
-            'Daniel Clark', 'Matthew Lewis', 'Anthony Walker', 'Mark Allen', 'Donald King',
-            'Steven Lopez', 'Paul Scott', 'Andrew Adams', 'Kenneth Gonzalez', 'Joshua Carter',
-            'Kevin Roberts', 'Brian Phillips', 'George Parker', 'Edward Edwards', 'Ronald Stewart',
-            'Timothy Morris', 'Jason Reed', 'Jeffrey Morgan', 'Ryan Murphy', 'Jacob Rivera',
-            'Gary Richardson', 'Nicholas Howard', 'Eric Torres', 'Jonathan Gray', 'Stephen James',
-            'Larry Brooks', 'Justin Sanders', 'Scott Bennett', 'Brandon Barnes', 'Benjamin Henderson',
-            'Samuel Jenkins', 'Frank Powell', 'Raymond Patterson', 'Alexander Flores', 'Patrick Butler',
-            'Jack Foster', 'Dennis Bryant', 'Jerry Russell', 'Peter Johnson', 'Henry Wilson',
-            'Nathan Brooks', 'Connor Murphy', 'Ethan White', 'Mason Harris', 'Noah Davis',
-            'Lucas Brown', 'Aiden Miller', 'Carter Taylor', 'Logan Williams', 'Jackson Davis',
-            'Owen Wilson', 'Wyatt Lewis', 'Henry Hall', 'Leo Young', 'Miles Lopez',
-            'Julian Green', 'Eli Baker', 'Caleb Nelson', 'Grayson Mitchell', 'Landon Turner',
-            'Adrian Campbell', 'Zachary Evans', 'Isaac Collins', 'Levi Sanchez', 'Aaron Rogers',
-            'Evan Cook', 'Axel Bell', 'Ian Bailey', 'Jaxon Cooper', 'Colton Cox',
-            'Bentley Ward', 'Easton Peterson', 'Cooper Ramirez', 'Parker Watson', 'Nolan Kelly',
-            'Tristan Price', 'Declan Wood', 'Silas Ross', 'Jasper Coleman', 'Ryder Perry',
-            'Bennett Long', 'Kai Hughes', 'Maxwell Washington', 'Theodore Simmons', 'Asher Gonzales',
-            'Dominic Alexander', 'Xavier Griffin', 'Jace Hayes', 'Brayden Ford', 'Kayden Graham',
-            'Blake Wallace', 'Lincoln Cole', 'Elias Brooks', 'Roman Owens', 'Greyson Fisher',
-            'Oliver Stone', 'Gabriel Knight', 'Felix Sterling', 'Caspian Wave', 'Orion Bright',
-            'Atlas Strong', 'River Stone', 'Mountain Peak', 'Valley Deep', 'Crystal Clear',
-            'Diamond Sparkle', 'Pearl Shine', 'Silver Light', 'Gold Rush', 'Bronze Medal',
-            'Copper Wire', 'Platinum Edge', 'Titanium Steel', 'Cobalt Blue', 'Mercury Silver',
-            'Jupiter King', 'Mars Warrior', 'Saturn Ring', 'Neptune Ocean', 'Venus Star',
-            'Apollo Sun', 'Zeus Thunder', 'Poseidon Wave', 'Hades Shadow', 'Ares Battle',
-            'Hermes Speed', 'Dionysus Wine', 'Hephaestus Fire', 'Athena Wisdom', 'Artemis Moon',
-            'Aphrodite Love', 'Demeter Earth', 'Hestia Hearth', 'Persephone Spring', 'Hera Queen',
-            'Loki Trick', 'Thor Hammer', 'Odin Allfather', 'Freya Beauty', 'Tyr Justice',
-            'Baldur Bright', 'Heimdall Watch', 'Frigg Queen', 'Sif Golden', 'Idun Youth',
-            'Fenrir Wolf', 'Jormungandr Serpent', 'Hel Death', 'Valkyrie Warrior', 'Einherjar Hero',
-            'Ragnar Lothbrok', 'Bjorn Ironside', 'Ivar Boneless', 'Sigurd Snake', 'Harald Fairhair',
-            'Rollo Viking', 'Leif Erikson', 'Erik Red', 'Canute Great', 'Sweyn Forkbeard',
-            'William Conqueror', 'Richard Lionheart', 'Edward Longshanks', 'Henry Tudor', 'Charles Stuart',
-            'James Stuart', 'George Hanover', 'Edward Windsor', 'Albert Saxe', 'Louis Bourbon',
-            'Philip Habsburg', 'Ferdinand Aragon', 'Isabella Castile', 'Francis Valois', 'Henry Valois',
-            'Charles Valois', 'Louis Capet', 'Philip Capet', 'Robert Capet', 'Hugh Capet',
-            'Otto Saxon', 'Henry Saxon', 'Conrad Salian', 'Henry Salian', 'Frederick Hohenstaufen',
-            'Rudolf Habsburg', 'Albert Habsburg', 'Leopold Habsburg', 'Maximilian Habsburg', 'Charles Habsburg',
-            'Philip Habsburg', 'Ferdinand Habsburg', 'Matthias Habsburg', 'Rudolf Habsburg', 'Joseph Habsburg',
-            'Francis Habsburg', 'Ferdinand Habsburg', 'Franz Joseph', 'Charles Habsburg', 'Otto Habsburg'
-        ]
-        
-        # 生成200个女生名字（用于CD栋）
-        female_names = [
-            'Mary Johnson', 'Patricia Brown', 'Jennifer Davis', 'Linda Wilson', 'Elizabeth Taylor',
-            'Barbara Thomas', 'Susan White', 'Jessica Martin', 'Sarah Garcia', 'Karen Robinson',
-            'Nancy Rodriguez', 'Betty Lee', 'Margaret Hall', 'Sandra Young', 'Donna Wright',
-            'Carol Hill', 'Ruth Green', 'Sharon Baker', 'Michelle Nelson', 'Laura Mitchell',
-            'Emily Turner', 'Kimberly Campbell', 'Deborah Evans', 'Amanda Collins', 'Melissa Sanchez',
-            'Stephanie Rogers', 'Rebecca Cook', 'Sharon Bell', 'Cynthia Bailey', 'Kathleen Cooper',
-            'Amy Cox', 'Angela Ward', 'Brenda Peterson', 'Emma Ramirez', 'Rachel Watson',
-            'Carolyn Kelly', 'Janet Price', 'Maria Wood', 'Heather Ross', 'Diane Coleman',
-            'Lisa Perry', 'Michelle Long', 'Emily Hughes', 'Debra Washington', 'Kimberly Simmons',
-            'Donna Gonzales', 'Carol Alexander', 'Anna Martinez', 'Olivia Davis', 'Sophia Brown',
-            'Victoria Taylor', 'Grace Mitchell', 'Chloe Martinez', 'Zoe Thompson', 'Ava Jackson',
-            'Isabella Wilson', 'Mia Garcia', 'Charlotte Moore', 'Amelia Johnson', 'Harper Jones',
-            'Evelyn Martinez', 'Abigail Rodriguez', 'Emily Clark', 'Madison Walker', 'Sofia Allen',
-            'Avery King', 'Luna Wright', 'Scarlett Hill', 'Aria Adams', 'Layla Gonzalez',
-            'Nora Carter', 'Riley Roberts', 'Hannah Phillips', 'Addison Parker', 'Aubrey Edwards',
-            'Ellie Stewart', 'Natalie Morris', 'Savannah Reed', 'Brooklyn Morgan', 'Leah Murphy',
-            'Stella Rivera', 'Hazel Richardson', 'Violet Howard', 'Aurora Torres', 'Willow Gray',
-            'Claire James', 'Skylar Brooks', 'Lucy Sanders', 'Paisley Bennett', 'Naomi Barnes',
-            'Elena Henderson', 'Maya Jenkins', 'Aaliyah Powell', 'Lillian Patterson', 'Ariana Flores',
-            'Kinsley Butler', 'Katherine Foster', 'Liliana Bryant', 'Nevaeh Russell', 'Bella Diaz',
-            'Arianna Myers', 'Mackenzie Hamilton', 'Samantha Sullivan', 'Allison Woods', 'Genesis West',
-            'Alyssa Jordan', 'Eva Reynolds', 'Caroline Ellis', 'Kylie Gibson', 'Autumn Reeves',
-            'Piper Burns', 'Lyla Shaw', 'Natalia Tucker', 'Faith Hunter', 'Alexis Crawford',
-            'Isabelle Boyd', 'Ruby Morales', 'Sophie Watts', 'Lillian Schultz', 'Ariana Bishop',
-            'Kinsley Mullins', 'Katherine Hodges', 'Liliana Berger', 'Nevaeh Frank', 'Bella Harrington',
-            'Penelope Chase', 'Isla Moon', 'Violet Rose', 'Hazel Bloom', 'Phoenix Star',
-            'Ivy Lane', 'Seraphina Sky', 'Luna Star', 'Aurora Dawn', 'Willow Tree',
-            'Ocean Blue', 'Forest Green', 'Sapphire Blue', 'Emerald Green', 'Ruby Red',
-            'Amethyst Purple', 'Topaz Yellow', 'Tanzanite Blue', 'Alexandrite Color', 'Moonstone White',
-            'Peridot Green', 'Citrine Yellow', 'Jade Green', 'Turquoise Blue', 'Coral Pink',
-            'Rose Petal', 'Lily Bloom', 'Daisy Field', 'Tulip Spring', 'Orchid Beauty',
-            'Jasmine Night', 'Lavender Dream', 'Iris Color', 'Sunflower Bright', 'Cherry Blossom',
-            'Magnolia White', 'Peony Pink', 'Carnation Red', 'Marigold Gold', 'Zinnia Rainbow',
-            'Poppy Red', 'Daffodil Yellow', 'Hyacinth Blue', 'Gardenia White', 'Camellia Pink',
-            'Azalea Spring', 'Rhododendron Mountain', 'Wisteria Purple', 'Clematis Climb', 'Honeysuckle Sweet',
-            'Jasmine Tea', 'Lilac Purple', 'Forsythia Yellow', 'Dogwood White', 'Redbud Pink',
-            'Crabapple Red', 'Hawthorn White', 'Elderberry Dark', 'Serviceberry Blue', 'Chokecherry Red',
-            'Sage Green', 'Thyme Herb', 'Rosemary Leaf', 'Basil Fresh', 'Mint Cool',
-            'Oregano Spice', 'Parsley Green', 'Cilantro Fresh', 'Dill Weed', 'Chive Onion',
-            'Tarragon Fine', 'Marjoram Sweet', 'Bay Leaf', 'Fennel Seed', 'Anise Star',
-            'Cardamom Pod', 'Cinnamon Stick', 'Nutmeg Spice', 'Clove Bud', 'Vanilla Bean',
-            'Ginger Root', 'Turmeric Gold', 'Saffron Thread', 'Paprika Red', 'Cumin Seed',
-            'Coriander Seed', 'Mustard Yellow', 'Peppercorn Black', 'Star Anise', 'Fenugreek Seed',
-            'Sumac Berry', 'Zaatar Mix', 'Harissa Hot', 'Berbere Spice', 'Ras El Hanout',
-            'Baharat Mix', 'Dukkah Nut', 'Tajin Season', 'Old Bay', 'Cajun Spice',
-            'Jerk Season', 'Adobo Mix', 'Garam Masala', 'Curry Powder', 'Tandoori Mix',
-            'Garam Spice', 'Panch Phoron', 'Chaat Masala', 'Sambar Powder', 'Rasam Mix',
-            'Biryani Spice', 'Korma Mix', 'Vindaloo Hot', 'Tikka Masala', 'Butter Chicken',
-            'Tandoori Chicken', 'Chicken Curry', 'Lamb Curry', 'Beef Curry', 'Fish Curry',
-            'Vegetable Curry', 'Dal Tadka', 'Chana Masala', 'Aloo Gobi', 'Palak Paneer',
-            'Baingan Bharta', 'Mutter Paneer', 'Navratan Korma', 'Malai Kofta', 'Shahi Paneer'
-        ]
-        
+        # Use neutral names so the seed data cannot be mistaken for a real roster.
         # Create 200 students (100 males for AB栋, 100 females for CD栋)
         # Building A: 25 rooms for 100 male students
         # Building B: 25 rooms for 100 male students (但实际上我们只分配100个男生到AB栋)
@@ -278,8 +178,8 @@ def init_database():
         
         for i in range(100):
             student_id = f"{100000000 + i}"
-            name = male_names[i] if i < len(male_names) else f"Male Student {i}"
-            phone = f"139{str(10000000 + i).zfill(8)}"
+            name = f"Sample Student {student_id}"
+            phone = f"000{10000000 + i:08d}"
             gender = 'Male'
             major = random.choice(majors)
             
@@ -292,7 +192,7 @@ def init_database():
                 user_id=student_id,
                 username=student_id,
                 password_hash=hash_password('123456'),
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 role='student'
             )
@@ -302,7 +202,7 @@ def init_database():
             student = Student(
                 student_id=student_id,
                 name=name,
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 password_hash=student_user.password_hash,  # Copy password from user
                 gender=gender,
@@ -333,8 +233,8 @@ def init_database():
         
         for i in range(100):
             student_id = f"{200000000 + i}"
-            name = female_names[i] if i < len(female_names) else f"Female Student {i}"
-            phone = f"139{str(20000000 + i).zfill(8)}"
+            name = f"Sample Student {student_id}"
+            phone = f"000{20000000 + i:08d}"
             gender = 'Female'
             major = random.choice(majors)
             
@@ -348,7 +248,7 @@ def init_database():
                 user_id=student_id,
                 username=student_id,
                 password_hash=hash_password('123456'),
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 role='student'
             )
@@ -358,7 +258,7 @@ def init_database():
             student = Student(
                 student_id=student_id,
                 name=name,
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 password_hash=student_user.password_hash,  # Copy password from user
                 gender=gender,
@@ -389,8 +289,8 @@ def init_database():
         
         for i in range(100):
             student_id = f"{300000000 + i}"
-            name = male_names[100 + i] if (100 + i) < len(male_names) else f"Male Student {100 + i}"
-            phone = f"139{str(30000000 + i).zfill(8)}"
+            name = f"Sample Student {student_id}"
+            phone = f"000{30000000 + i:08d}"
             gender = 'Male'
             major = random.choice(majors)
             
@@ -403,7 +303,7 @@ def init_database():
                 user_id=student_id,
                 username=student_id,
                 password_hash=hash_password('123456'),
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 role='student'
             )
@@ -413,7 +313,7 @@ def init_database():
             student = Student(
                 student_id=student_id,
                 name=name,
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 password_hash=student_user.password_hash,  # Copy password from user
                 gender=gender,
@@ -444,8 +344,8 @@ def init_database():
         
         for i in range(100):
             student_id = f"{400000000 + i}"
-            name = female_names[100 + i] if (100 + i) < len(female_names) else f"Female Student {100 + i}"
-            phone = f"139{str(40000000 + i).zfill(8)}"
+            name = f"Sample Student {student_id}"
+            phone = f"000{40000000 + i:08d}"
             gender = 'Female'
             major = random.choice(majors)
             
@@ -458,7 +358,7 @@ def init_database():
                 user_id=student_id,
                 username=student_id,
                 password_hash=hash_password('123456'),
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 role='student'
             )
@@ -468,7 +368,7 @@ def init_database():
             student = Student(
                 student_id=student_id,
                 name=name,
-                email=f'{student_id}@link.cuhk.edu.cn',
+                email=f'{student_id}@example.invalid',
                 phone=phone,
                 password_hash=student_user.password_hash,  # Copy password from user
                 gender=gender,

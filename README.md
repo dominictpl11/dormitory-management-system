@@ -60,7 +60,7 @@ pip install -r backend/requirements.txt
 python backend/init_db.py
 ```
 
-This creates the local SQLite database with sample staff, residents, buildings, rooms, and maintenance types. Running it again resets the local database.
+This creates the local SQLite database with sample staff, residents, buildings, rooms, and maintenance types. Generated contact values use reserved `example.invalid` addresses and non-routable phone placeholders. Running it again resets the local database.
 
 ### 3. Start the application
 
@@ -99,7 +99,7 @@ Authenticated requests use the `Authorization: Bearer <token>` header returned b
 
 ## Development notes
 
-This repository is optimized for local development and review. The development server, wildcard API CORS policy, SQLite storage, seeded sample passwords, and fallback development secrets should be replaced or tightened before a real deployment.
+This repository is optimized for local development and review. The wildcard API CORS policy, SQLite storage, seeded sample passwords, and process-local fallback secrets should be replaced or tightened before a real deployment.
 
 ## License
 
